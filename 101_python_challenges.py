@@ -372,23 +372,140 @@
 # draw_mosaic("#333333", 5, 100, 250)
 
 
+# 28) splash screen and progress bar
+#
+# import os
+# import time
+# def progress_bar(seconds):
+#     for progress in range(0, seconds+1):
+#         percent = (progress * 100) // seconds
+#         print("\n")
+#         print("Loading...")
+#         print("<" + ("=" * progress) + (" " * (seconds - progress)) + "> " + str(percent) + "%")
+#         print("\n")
+#         time.sleep(1)
+#         os.system('clear')
+#
+# def splash_screen(seconds):
+#     print("\n")
+#     print(" *******************")
+#     print(" *                 *")
+#     print(" *  SPLASH SCREEN  *")
+#     print(" *       V1.0      *")
+#     print(" *                 *")
+#     print(" *******************")
+#     time.sleep(seconds)
+#     os.system('clear')
+#
+# splash_screen(3)
+# progress_bar(3)
+# username = input("Type your username: ")
 
+# 29) how many bytes in...
+#
+# def kb_to_b(kb):
+#     return 1024 * kb
+# def mb_to_b(mb):
+#     return 1024*1024*mb
+# def gb_to_b(gb):
+#     return mb_to_b(gb)*1024
 
+# 30) binary shifts
 
+# binary = int(input("Enter an 8-bit binary number: "))
+# shift = input("What type of shift, left or right: ")
+#
+# def left_shift(binary, digits):
+#     for i in range(0, digits):
+#         binary = binary[1:8]
+#         binary += "0"
+#     return binary
+# def right_shift(binary, digits):
+#     for i in range(0, digits):
+#         binary = binary[0:7]
+#         binary = "0" + binary
+#     return binary
 
+# 31) binary permutations
+#
+# def binary_permutations(n_bits, binary=""):
+#     if n_bits > 0:
+#         binary_permutations(n_bits-1, binary+"0")
+#         binary_permutations(n_bits-1, binary+"1")
+#     else:
+#         print(binary)
+# binary_permutations(4)
 
+# 32) factorial challenge
 
+# def factorial(n):
+#     if n == 0: return 1
+#     total = 1
+#     for i in range(1, n+1):
+#         total *= i
+#     return total
+#
+# def recurs(n):
+#     if n == 0: return 1
+#     if n > 1:
+#         return n * recurs(n-1)
+#     else:
+#         return n
+#
+# print(recurs(5))
 
+# 33) my class register
+#
+# def register(pupils):
+#     student_dict = {}
+#     for i in pupils:
+#         attending = input(f"Is {i} attending (y or n): ")
+#         student_dict[i] = attending
+#     print(f"Total number of students is {len(pupils)}")
+#     print(f"The number of students attending is {sum(v == 'y' for v in student_dict.values())}")
+#     print(f"The number of students absent is {sum(v == 'n' for v in student_dict.values())}")
+# print(register(["ivan", "john", "shaun", "phil"]))
 
+# 34) weather stats challenge
+#
+# quebec = [["January", -11.1, 83], ["February", -9.7, 71], ["March", -3.8, 71], ["April", 4.1, 71], ["May", 11.2, 80],
+#           ["June", 16.6, 114], ["July", 19.9, 117], ["August", 8, 107], ["September", 13.3, 105], ["October", 7.3, 82],
+#           ["November", 0.5, 93], ["December", -8.1, 107]]
+# # month, avg. temperature, rainfall
+# import statistics
+#
+# avg_year_temp = statistics.mean(i[1] for i in quebec)
+#
+# hottest_month = max(i[1] for i in quebec)
+#
+# total_rainfall = sum(i[2] for i in quebec)
+#
+# avg_rainfall = statistics.mean(i[2] for i in quebec)
+#
+# coldest_month = min(i[1] for i in quebec)
+#
+# dif_wet_and_dry = max(i[2] for i in quebec) - min(i[2] for i in quebec)
+#
+# max_rainfall = 0
+# max_rainfall_month = ""
+# wettest_avg_temp = 0
+# for i in range(0, 12):
+#     if quebec[i][2] > max_rainfall:
+#         max_rainfall = quebec[i][2]
+#         max_rainfall_month = quebec[i][0]
+#         wettest_avg_temp = quebec[i][1]
+#
+# avg_winter_temp = statistics.mean(i[2] for i in quebec if i[0] in ["December", "January", "February"])
+# print(avg_winter_temp)
 
-
-
-
-
-
-
-
-
+# 35) colour difference formula
+#
+# r = int(input("enter red code"))
+# g = int(input("enter green code"))
+# b = int(input("enter blue code"))
+#
+# shortest_dist = 3*255**2+1
+# closest_color = ""
 
 
 
