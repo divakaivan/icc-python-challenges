@@ -507,7 +507,76 @@
 # shortest_dist = 3*255**2+1
 # closest_color = ""
 
+# 36) top 3 countries
+#
+# largest = ["Russia", "Canada", "USA"]
+# guesses = []
+#
+# carry_on = True
+# while carry_on:
+#     user_input = input("Enter a guess: ")
+#     if user_input == "x":
+#         print("You ended the game.")
+#         carry_on = False
+#     elif user_input in largest and user_input not in guesses:
+#         print(f"Yes, {user_input} is one of the top 3")
+#         guesses.append(user_input)
+#         print(f"Your guesses so far are: {guesses}")
+#     elif user_input in guesses and user_input in largest:
+#         print(f"Sorry, you have already put in {user_input}")
+#     else:
+#         print(f"{user_input} is not in the top 3")
 
+#new one
+#
+# decrypt_me = "TIIAERTESGHSSSCEMSAE"
+# first = decrypt_me[:len(decrypt_me)//2]
+# last = decrypt_me[len(decrypt_me)//2:]
+#
+# decrypted = ""
+# for x,y in zip(first, last):
+#     decrypted += f"{x}{y}"
+# print(decrypted)
+#
+
+# 62) credit card validity
+
+# number = "4921817171391514"
+#
+# number = [int(i)*2 if number.index(i) % 2 == 0 else int(i) for i in number]
+# print(number)
+# number = [1+(i-10) if i > 10 else i for i in number]
+# print(sum(number))
+# if sum(number) % 10 == 0:
+#     print("correct")
+
+from random import randint
+
+def random_n(n):
+    range_start = 10 ** (n-1)
+    range_end = (10**n) - 1
+    return str(randint(range_start, range_end))
+
+def get_luhn_number():
+    while True:
+        eight_digit = random_n(16)
+        # *2 of even positioned numbers
+        eight_digit = [int(i)*2 if eight_digit.index(i) % 2 == 0 else int(i) for i in eight_digit]
+        # turning 2 digit numbers to one digit
+        eight_digit = [1+(i-10) if i >= 10 else i for i in eight_digit]
+        if sum(eight_digit) % 10 == 0:
+            yield eight_digit
+
+f = get_luhn_number()
+x = False
+while not x:
+    x = next(f)
+
+import itertools
+
+def get_n_luhn_numbers(n):
+    luhn_numbers = list(itertools.islice(get_luhn_number(), n))
+    return luhn_numbers
 
 
 
